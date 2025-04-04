@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli Experience</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            overflow: hidden;
+        }
+        
+        .content {
+            width: 100%;
+            height: 100%;
+            background: url('আপনার-ফটো-GitHub-Raw-URL') no-repeat center center/cover;
+            animation: glitch 0.5s infinite alternate;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0, 0); filter: hue-rotate(0deg); }
+            20% { transform: translate(-2px, 2px); filter: hue-rotate(30deg); }
+            40% { transform: translate(2px, -2px); filter: hue-rotate(60deg); }
+            60% { transform: translate(-1px, 1px); filter: hue-rotate(90deg); }
+            80% { transform: translate(1px, -1px); filter: hue-rotate(120deg); }
+            100% { transform: translate(0, 0); filter: hue-rotate(150deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="content"></div>
+    <audio id="bgMusic" autoplay loop>
+        <source src="আপনার-গান-GitHub-Raw-URL" type="audio/mp3">
+    </audio>
+</body>
+</html>
