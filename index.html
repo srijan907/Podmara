@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghibli Experience</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: black;
-            overflow: hidden;
-        }
-        
-        .content {
-            width: 100%;
-            height: 100%;
-            background: url('image.jpg') no-repeat center center/cover;
-            animation: glitch 0.5s infinite alternate;
-        }
-        
-        @keyframes glitch {
-            0% { transform: translate(0, 0); filter: hue-rotate(0deg); }
-            20% { transform: translate(-2px, 2px); filter: hue-rotate(30deg); }
-            40% { transform: translate(2px, -2px); filter: hue-rotate(60deg); }
-            60% { transform: translate(-1px, 1px); filter: hue-rotate(90deg); }
-            80% { transform: translate(1px, -1px); filter: hue-rotate(120deg); }
-            100% { transform: translate(0, 0); filter: hue-rotate(150deg); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flying Ghibli Photo</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+
+    .photo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      transform: translate(-50%, -50%);
+      animation: fly 5s ease-in-out infinite, glitch 1s infinite;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    @keyframes fly {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-48%, -52%) scale(1.05); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    @keyframes glitch {
+      0% { filter: hue-rotate(0deg) contrast(1); }
+      25% { filter: hue-rotate(20deg) contrast(1.1); }
+      50% { filter: hue-rotate(-20deg) contrast(1); }
+      75% { filter: hue-rotate(10deg) contrast(0.9); }
+      100% { filter: hue-rotate(0deg) contrast(1); }
+    }
+  </style>
 </head>
 <body>
-    <div class="content"></div>
-    <audio id="bgMusic" autoplay loop>
-        <source src="song.mp3" type="audio/mp3">
-    </audio>
+  <img src="https://files.catbox.moe/qf695y.jpeg" alt="Flying Ghibli" class="photo" />
+  
+  <audio autoplay loop>
+    <source src="song.mp3" type="audio/mp3" />
+  </audio>
 </body>
 </html>
